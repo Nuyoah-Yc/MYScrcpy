@@ -67,7 +67,7 @@ class Point:
 
     @property
     def t(self) -> tuple[int, int]:
-        return (self.x, self.y)
+        return self.x, self.y
 
     @staticmethod
     def to_uldr(point_0: 'Point', point_1: 'Point') -> tuple['Point', 'Point']:

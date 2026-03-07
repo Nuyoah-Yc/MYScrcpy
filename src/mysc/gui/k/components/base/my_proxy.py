@@ -1560,9 +1560,9 @@ class JoystickMapper:
         self.uj, self.vj = joystick_center
         self.rj = joystick_max_radius
 
-    def logic_to_touch_point(self, x_logic, y_logic, R_logic=100.0):
+    def logic_to_touch_point(self, x_logic, y_logic, r_logic=100.0):
         """
-        将还原后的逻辑坐标转换为模拟触摸的绝对像素坐标
+            将还原后的逻辑坐标转换为模拟触摸的绝对像素坐标
         """
         # 1. 计算逻辑空间中的向量长度和角度
         magnitude = math.sqrt(x_logic ** 2 + y_logic ** 2)
@@ -1571,7 +1571,7 @@ class JoystickMapper:
 
         # 2. 归一化强度 (0.0 到 1.0)
         # 确保不会超出摇杆物理边界
-        normalized_mag = min(magnitude / R_logic, 1.5)
+        normalized_mag = min(magnitude / r_logic, 1.5)
 
         # 3. 映射回摇杆的像素坐标系
         # 屏幕像素坐标系中：U = CenterU + r * cos(theta)

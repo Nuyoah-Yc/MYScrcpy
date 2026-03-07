@@ -1,4 +1,4 @@
-# MYScrcpy V3.3.0
+# MYScrcpy V3.3
 
 ### [README in English](README_EN.md)
 
@@ -72,10 +72,10 @@ Macosx
 [KivyMD getting-started](https://kivymd.readthedocs.io/en/latest/getting-started/)
 
 ```bash
-pip install mysc
+uv add mysc
 
 # V3.2版本以上 采用 KivyMD 2.X 版本，需手动安装
-pip install https://github.com/kivymd/KivyMD/archive/master.zip
+uv add https://github.com/kivymd/KivyMD/archive/master.zip
 ```
 
 ### 1.2 克隆本项目，本项目采用uv管理
@@ -145,6 +145,8 @@ sudo apt install build-essential python3-dev ffmpeg libav-tools portaudio19-dev
 
 启动程序
 ```bash
+mysc
+或
 python -m mysc.run
 ```
 

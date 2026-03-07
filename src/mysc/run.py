@@ -14,4 +14,9 @@ __all__ = []
 
 from mysc.gui.k import app
 
-app.MYScrcpyApp().run()
+def run():
+    app.MYScrcpyApp().run()
+
+
+if __name__ == '__main__':
+    run()

@@ -1,4 +1,4 @@
-# MYScrcpy V3.3.0
+# MYScrcpy V3.3
 ### [中文介绍](README.md)
 ### A [**Scrcpy 3.3**](https://github.com/Genymobile/scrcpy/) client implemented in Python
 Including complete parsing of video, audio, and control functions, developer-friendly and ready to use out of the box!
@@ -64,10 +64,10 @@ For any questions, ideas, or suggestions during use, feel free to contact me thr
 
 ```bash
 运行
-pip install mysc
+uv add mysc
 
 # Versions above V3.2 use KivyMD 2.X, which requires manual installation
-pip install https://github.com/kivymd/KivyMD/archive/master.zip
+uv add https://github.com/kivymd/KivyMD/archive/master.zip
 ```
 
 ### 1.2 Clone this project (managed with uv)
@@ -132,6 +132,10 @@ sudo apt install build-essential python3-dev ffmpeg libav-tools portaudio19-dev
 
 Launch the program
 ```bash
+mysc
+
+or
+
 python -m mysc.run
 ```
 
