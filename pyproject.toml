@@ -1,17 +1,27 @@
-[build-system]
-requires = ["setuptools"]
-build-backend = "setuptools.build_meta"
-
 [project]
 name = "mysc"
-version = "3.2.1"
-authors = [
-    {name = "Me2sY", email = "me2sy@outlook.com"}
-]
-description = "A Scrcpy client implemented in Python. Gui with Kivy/dearpygui/pygame. With Video, Audio, also Control. GUI Supports Key Proxy, Extensions, window position record, right-click gesture control, File Manager, Virtual Camera, UHID Keyboard and Chinese input and more."
+version = "3.3.0"
+description = "A Scrcpy client implemented in Python. Use Kivy/KivyMD, with Video, Audio, also Control."
 readme = "README.md"
-requires-python = ">= 3.11"
-keywords = ["scrcpy", "android", "adbutils", "av", "numpy", "Kivy", "KivyMD", "DearPyGui", "Pygame", "adb", "pyaudio"]
+authors = [
+    { name = "Me2sY", email = "me2sy@outlook.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "av>=16.1.0",
+    "babel>=2.17.0",
+    "ipython>=9.9.0",
+    "kivy>=2.3.1",
+    "kivymd",
+    "loguru>=0.7.3",
+    "matplotlib>=3.10.8",
+    "numpy>=2.4.1",
+    "olefile>=0.47",
+    "pyaudio>=0.2.14",
+    "pycairo>=1.29.0",
+    "pynput>=1.8.1",
+    "pyperclip>=1.11.0",
+]
 classifiers = [
     "Programming Language :: Python :: 3",
     "Development Status :: 4 - Beta",
@@ -20,74 +30,19 @@ classifiers = [
     "Topic :: Multimedia :: Graphics :: Capture :: Screen Capture"
 ]
 
-dependencies = [
-    # Base
-    "loguru", "adbutils>=2.8.10", "click", "uiautomator2",
-
-    # Video
-    "av", "numpy",
-
-    # Audio
-    "pyaudio",
-
-    # Control
-    "pyperclip"
-]
-
-
-[project.optional-dependencies]
-# For GUI USE
-gui = [
-    # GUI Framework
-    "kivy>=2.3.1", "pynput",
-    "dearpygui>=2.0.0",
-    "pygame",
-
-    # GUI Functions
-    "moosegesture", "pyvirtualcam"
-]
-
-# Web USE
-web = [
-    "nicegui"
-]
-
-flac = [
-    "pyflac"
-]
-
-opus = [
-    "pyogg", "opuslib"
-]
-
-tools = [
-    "pyvirtualcam"
-]
-
-full = [
-    "kivy>=2.3.1",
-    "dearpygui>=2.0.0", "pygame",
-    "pyperclip", "moosegesture", "pyvirtualcam", "opencv-python",
-    "nicegui",
-    "pyflac", "pyogg", "opuslib"
-]
-
-
 [project.scripts]
-mysc-cli = "myscrcpy.run:run"
-mysc-web = "myscrcpy.gui.ng.main:run_app"
+mysc = "mysc.run"
 
-mysc-t-vc = "myscrcpy.tools.virtualcam:cli"
+[build-system]
+requires = ["uv_build>=0.9.13,<0.10.0"]
+build-backend = "uv_build"
 
-mysc-unlocker = "myscrcpy.tools.unlocker:run"
+[[tool.uv.index]]
+url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+default = true
 
-mysc-k-cli = "myscrcpy.gui.k.main:run"
-
-[project.gui-scripts]
-mysc-gui = "myscrcpy.run:run"
-
-mysc-k = "myscrcpy.gui.k.main:run"
-
+[tool.uv.sources]
+kivymd = { path = "KivyMD-master.zip" }
 
 [project.urls]
 Homepage = "https://github.com/me2sy/MYScrcpy"

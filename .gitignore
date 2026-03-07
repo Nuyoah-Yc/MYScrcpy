@@ -1,12 +1,11 @@
-/dist
-dist/myscrcpy-1.0.0-py3-none-any.whl
-*.pyc
-/.idea
-*.spec
-/src/mysc.egg-info
-/src/myscrcpy/test_zone
-/notebooks
-/local
-/.stfolder
-.stignore
-/src/myscrcpy/test_utils
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+/src/mysc/test_zone/
