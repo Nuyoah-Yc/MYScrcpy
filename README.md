@@ -61,7 +61,7 @@ Macosx
 
 #### 邮箱：Me2sY@outlook.com
 
-#### Blog: [CSDN](https://blog.csdn.net/weixin_43463913)**
+#### Blog: [CSDN](https://blog.csdn.net/weixin_43463913)
 
 ## 基本使用
 
@@ -153,22 +153,29 @@ python -m mysc.run
 #### 界面简介
 
 **选择设备界面**
+
 ![gui_devices.jpg](files/images/gui_devices.jpg)
 
 **选择连接模式界面**
+
 ![gui_connect_mode.jpg](files/images/gui_connect_mode.jpg)
 
 **编辑连接模式界面**
+
 ![gui_mode_edit.jpg](files/images/gui_mode_edit.jpg)
 
 **切换连接界面**
+
 ![gui_connections.jpg](files/images/gui_connections.jpg)
 
 **侧边功能**
+
 ![gui_nav.jpg](files/images/gui_nav.jpg)
 
 **控制代理（映射）界面**
+
 进入编辑模式后，右键界面处增加控制映射按钮。支持FPS模式，技能释放模式（使用技能参数指示器获取参数）鼠标移动模式等
+
 ![gui_proxy.jpg](files/images/gui_proxy.jpg)
 
 
@@ -197,4 +204,5 @@ python -m mysc.run
 
 ## 历史版本
 [V3.2 - V1.7 README.md](files/old_version/README.md)
+
 [V3.2 - V1.7 README_EN.md](files/old_version/README_EN.md)

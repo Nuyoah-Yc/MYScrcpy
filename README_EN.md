@@ -141,21 +141,27 @@ python -m mysc.run
 
 #### Interface Introduction
 **Device Selection Interface**
+
 ![gui_devices.jpg](files/images/gui_devices.jpg)
 
 **Connection Mode Selection Interface**
+
 ![gui_connect_mode.jpg](files/images/gui_connect_mode.jpg)
 
 **Connection Mode Editing Interface**
+
 ![gui_mode_edit.jpg](files/images/gui_mode_edit.jpg)
 
 **Connection Switching Interface**
+
 ![gui_connections.jpg](files/images/gui_connections.jpg)
 
 **Sidebar Functions**
+
 ![gui_nav.jpg](files/images/gui_nav.jpg)
 
 **Control Proxy (Mapping) Interface**
+
 After entering edit mode, a control mapping button is added to the right-click menu. Supports FPS mode, skill release mode (using skill parameter indicator to get parameters), mouse movement mode, etc.
 ![gui_proxy.jpg](files/images/gui_proxy.jpg)
 
