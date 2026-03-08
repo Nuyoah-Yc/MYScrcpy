@@ -7,6 +7,10 @@ Including complete parsing of video, audio, and control functions, developer-fri
 
 Featuring a modern interface design, supporting Windows/Ubuntu(X11)/MacOSX, multi-device connection, and mouse/keyboard mapping.
 
+Windows EXE Download：[BaiduDisk](https://pan.baidu.com/s/14gDbpJKkBeVVvdIu-HTWEw?pwd=cp9f)
+
+MD5: 7e30b64e963666b73f78f6da37e2d90d
+
 Windows
 ![windows.png](files/images/windows.png)
 

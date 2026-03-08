@@ -10,6 +10,10 @@
 
 现代化界面风格，支持Windows/Ubuntu(X11)/MacOSX，支持多设备连接，鼠标及键盘映射。
 
+Windows程序下载：[百度网盘](https://pan.baidu.com/s/14gDbpJKkBeVVvdIu-HTWEw?pwd=cp9f)
+
+MD5: 7e30b64e963666b73f78f6da37e2d90d
+
 Windows
 ![windows.png](files/images/windows.png)
 
