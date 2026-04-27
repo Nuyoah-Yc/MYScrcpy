@@ -30,10 +30,16 @@ from kivymd.uix.boxlayout import MDBoxLayout
 from kivymd.uix.screenmanager import MDScreenManager
 
 from mysc.gui.k.components.base.my_navigation import MYNavigation
+from mysc.gui.k.components.base.my_snack_bar import MYSnackBarInfo
 from mysc.gui.k.components.screens.devices import ScreenListDevices
 from mysc.gui.k.components.screens.connections import ScreenConnections
+from mysc.gui.k.defs import EnumLanguage, I18N, init_language
 from mysc.utils.params import Param
 from mysc.utils.storage import JSONStorage
+
+from kivymd.uix.menu import MDDropdownMenu
+
+_ = init_language()
 
 Config.set('kivy', 'exit_on_escape', 0)
 Config.set('input', 'mouse', 'mouse,multitouch_on_demand')
@@ -64,6 +70,9 @@ class MainConfig(JSONStorage):
     height: float = 800
 
     main_style: EnumStyle = EnumStyle.Light
+
+    # 界面语言（auto / en_US / zh_CN）
+    language: str = EnumLanguage.AUTO.value
 
     @property
     def size(self) -> tuple:
@@ -196,6 +205,37 @@ class Main(MDBoxLayout):
         """
         self.nav.add_fixed_button('animation', self.cb__btn_connections)
         self.nav.add_fixed_button('devices', self.cb__btn_devices)
+        self.nav.add_fixed_button('translate', self.cb__btn_language)
+
+    def cb__btn_language(self, caller):
+        """
+            语言切换菜单
+        :param caller:
+        :return:
+        """
+        items = [
+            dict(
+                text=lang.display_name,
+                leading_icon='check' if self.app_cfg.language == lang.value else 'translate',
+                on_release=lambda *_args, _lang=lang: menu.dismiss() or self._switch_language(_lang),
+            )
+            for lang in EnumLanguage
+        ]
+        menu = MDDropdownMenu(caller=caller, items=items)
+        menu.open()
+
+    def _switch_language(self, lang: EnumLanguage):
+        """
+            应用并持久化语言。class-level 字符串需重启生效。
+        :param lang:
+        :return:
+        """
+        if self.app_cfg.language == lang.value:
+            return
+        self.app_cfg.language = lang.value
+        self.app_cfg.dump()
+        I18N.set_language(lang.value)
+        MYSnackBarInfo(_('Language switched. Restart to fully apply.'))
 
     def cb__btn_devices(self, caller):
         """
@@ -227,6 +267,9 @@ class MYScrcpyApp(MDApp):
         self.app_cfg = MainConfig.load('main')
         if self.app_cfg is None:
             self.app_cfg = MainConfig('main')
+
+        # 应用语言设置（defs.py 模块加载时已读过一次，这里再确认一次以防配置写入更新）
+        I18N.set_language(self.app_cfg.language or EnumLanguage.AUTO.value)
 
         self.theme_cls.theme_style = self.app_cfg.main_style
         self.icon = Param.PATH_STATICS.joinpath('mysc.ico').__str__()
