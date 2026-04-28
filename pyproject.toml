@@ -13,6 +13,7 @@ dependencies = [
     "kivy>=2.3.1",
     "kivymd>=1.2.0",
     "loguru>=0.7.3",
+    "mcp>=1.27.0",
     "numpy>=2.4.2",
     "opencv-python>=4.13.0.92",
     "paddleocr>=3.4.0",
@@ -20,6 +21,8 @@ dependencies = [
     "pyaudio>=0.2.14",
     "pynput>=1.8.1",
     "pyperclip>=1.11.0",
+    "uiautodev>=0.14.0",
+    "uiautomator2>=3.5.0",
 ]
 classifiers = [
     "Programming Language :: Python :: 3",
